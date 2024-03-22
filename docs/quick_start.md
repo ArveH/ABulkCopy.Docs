@@ -3,9 +3,11 @@
 To get started, build the ABulkCopy.Cmd Console application.
 
 Then run:  
+
 ``` powershell
 .\ABulkCopy.Cmd.exe --help
 ```
+
 to see what commandline parameters there are.
 
 To move data from SQL Server to Postgres, you run it twice. First, you copy tables out from SQL Server into files. Then you use the same files to create tables and copy data into Postgres. Here is an example showing the command line parameters you need to use:
@@ -29,6 +31,7 @@ To move data from SQL Server to Postgres, you run it twice. First, you copy tabl
     ```  
 
 Remember that the Postgres database you copy into should be existing, empty, and containing these collations:  
+
 ``` sql
 DROP COLLATION IF EXISTS en_ci_ai;
 CREATE COLLATION en_ci_ai (provider = 'icu', locale = 'en-u-ks-level1', deterministic = false);
