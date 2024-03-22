@@ -1,4 +1,9 @@
 site_name: ABulkCopy Documentation
+nav:
+  - Home: 
+    - 'A database copy tool': index.md
+    - 'Quick Start': quick_start.md
+
 theme:
   name: material
   features:
@@ -11,7 +16,7 @@ theme:
     - search.suggest
     - search.highlight
     - content.tabs.link
-    - content.code.annotation
+    - content.code.annotate
     - content.code.copy
   language: en
   palette:
