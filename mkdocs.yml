@@ -1,7 +1,7 @@
 site_name: ABulkCopy Documentation
 nav:
-  - Home: 
-    - 'A database copy tool': index.md
+  - Home:
+    - Introduction: index.md
     - 'Quick Start': quick_start.md
 
 theme:
