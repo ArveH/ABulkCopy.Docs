@@ -1,14 +1,12 @@
 # Quick Start
 
-To get started, build the ABulkCopy.Cmd Console application.
+To get started, get the latest release from [https://github.com/ArveH/ABulkCopy](https://github.com/ArveH/ABulkCopy).
 
-Then run:  
+You find there releases to the left. 
 
-``` powershell
-.\ABulkCopy.Cmd.exe --help
-```
-
-to see what commandline parameters there are.
+1. Open the latest release by clicking on it.
+2. Download the "Release-vx.y.z.zip" file
+3. Unzip the file, and run: ``` .\ABulkCopy.Cmd.exe --help ```
 
 To move data from SQL Server to Postgres, you run it twice. First, you copy tables out from SQL Server into files. Then you use the same files to create tables and copy data into Postgres. Here is an example showing the command line parameters you need to use:
 
