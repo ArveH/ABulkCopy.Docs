@@ -1,8 +1,10 @@
 site_name: ABulkCopy Documentation
 nav:
-  - Home:
-    - Introduction: index.md
-    - 'Quick Start': quick_start.md
+  - Home: index.md
+  - 'Quick Start': quick_start.md
+  - Release Notes: release_notes.md
+  - Type Conversions:
+    - SQL Server to Postgres: type_mss_pg.md
 
 theme:
   name: material
@@ -40,6 +42,10 @@ markdown_extensions:
       pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 copyright: |
   &copy; 2024 <a href="https://github.com/arveh" target="_blank" rel="noopener">Arve Hansen</a>
