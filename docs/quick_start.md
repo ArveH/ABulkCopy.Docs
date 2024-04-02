@@ -2,9 +2,11 @@
 
 To get started, get the latest release from [https://github.com/ArveH/ABulkCopy](https://github.com/ArveH/ABulkCopy).
 
-You find there releases to the left. 
+You find there Releases on the right-hand side panel:
 
-1. Open the latest release by clicking on it.
+![Right-hand Releases panel](images/Releases.png "Releases")
+
+1. Open the Latest release by clicking on it.
 2. Download the "Release-vx.y.z.zip" file
 3. Unzip the file, and run: ``` .\ABulkCopy.Cmd.exe --help ```
 
