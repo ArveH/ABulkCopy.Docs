@@ -4,6 +4,11 @@ Before I get more functionality implemented, the Major version number will not b
 
 The Minor version number will change where there is significant new functionality, otherwise it's only the Patch number that will change.
 
+## :material-tag: 0.4.2 Fixed: \*\*ERROR\*\* Reset auto generation for ...
+
+When the length of the name of the table, and the length of the name of the identity column, together was getting close to 64 characters long, the copy program crashed when trying to copy into Postgres. This is now fixed.
+
+
 ## :material-tag: 0.2.1 Character lengths
 
 When getting the information from SQL Server's system tables, I used the length in bytes as output to the schema files. For string types, it makes more sense to use the character length. For example, it caused nvarchar columns copy from SQL Server to Postgres to become twice as long in Postgres. This is now fixed. I also fixed some other small errors with length, scale and precision for other types.
