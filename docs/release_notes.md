@@ -4,6 +4,12 @@ Before I get more functionality implemented, the Major version number will not b
 
 The Minor version number will change where there is significant new functionality, otherwise it's only the Patch number that will change.
 
+## :material-tag: 0.5.0 Major change. Internal functionality rewritten to handle schemas
+
+All lookup in system tables had to be changed to handle schemas. The schema and data files are also changed. The file names are prefixed with the schema they belong to. The .schema file now store information about the schema.
+
+Two new command line parameters where added. One for filtering on schemas (--schema-filter), and another for giving a file path for a file describing what a schema in SQL Server should be mapped to in Postgres (-m or --mapping-file). A sample-mappings.json file now accompanies the executable.
+
 ## :material-tag: 0.4.2 Fixed: \*\*ERROR\*\* Reset auto generation for ...
 
 When the length of the name of the table, and the length of the name of the identity column, together was getting close to 64 characters long, the copy program crashed when trying to copy into Postgres. This is now fixed.
