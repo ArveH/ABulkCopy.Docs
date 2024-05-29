@@ -4,6 +4,10 @@ Before I get more functionality implemented, the Major version number will not b
 
 The Minor version number will change where there is significant new functionality, otherwise it's only the Patch number that will change.
 
+## :material-tag: 0.7.0 Added command line parameter --to-lower
+
+This parameter will convert all identifiers (table names, column names, etc.) converted to lowercase. NOTE: For Postgres, this parameter will probably have no effect, unless it's used in conjunction with the --add-quotes parameter. Postgres will \"fold\" the identifier names to lowercase anyway, unless the identifier is surrounded with quotes. This parameter is only used when direction = In
+
 ## :material-tag: 0.6.0 Added command line parameter --skip-create
 
 Added a flag that can be used to skip creating tables and indexes, and only insert data. It's an experimental feature that might be removed or changed in the future.
