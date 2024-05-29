@@ -4,6 +4,10 @@ Before I get more functionality implemented, the Major version number will not b
 
 The Minor version number will change where there is significant new functionality, otherwise it's only the Patch number that will change.
 
+## :material-tag: 0.6.0 Added command line parameter --skip-create
+
+Added a flag that can be used to skip creating tables and indexes, and only insert data. It's an experimental feature that might be removed or changed in the future.
+
 ## :material-tag: 0.5.0 Major change. Internal functionality rewritten to handle schemas
 
 All lookup in system tables had to be changed to handle schemas. The schema and data files are also changed. The file names are prefixed with the schema they belong to. The .schema file now store information about the schema.
