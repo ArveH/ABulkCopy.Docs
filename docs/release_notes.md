@@ -6,7 +6,7 @@ The Minor version number will change where there is significant new functionalit
 
 ## :material-tag: 0.7.0 Added command line parameter --to-lower
 
-This parameter will convert all identifiers (table names, column names, etc.) converted to lowercase. NOTE: For Postgres, this parameter will probably have no effect, unless it's used in conjunction with the --add-quotes parameter. Postgres will \"fold\" the identifier names to lowercase anyway, unless the identifier is surrounded with quotes. This parameter is only used when direction = In
+This parameter will convert all identifiers (table names, column names, etc.) to lowercase. NOTE: For Postgres, this parameter will probably have no effect, unless it's used in conjunction with the --add-quotes parameter. Postgres will \"fold\" the identifier names to lowercase anyway, unless the identifier is surrounded with quotes. This parameter is only used when direction = In
 
 ## :material-tag: 0.6.0 Added command line parameter --skip-create
 
