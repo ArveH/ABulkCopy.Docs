@@ -6,7 +6,7 @@ The Minor version number will change where there is significant new functionalit
 
 ## :material-tag: 0.8.0 Breaking change: Changed bool and datetime default mappings
 
-When converting from SqlServer to Postgres, bit is now translated to boolean (previously smallint) and datetime/datetime2 is translated to timestamp with time zone (previously timestamp without time zone). However, you can change to the old mappings by using the --mappings-file parameter.
+When converting from SqlServer to Postgres, bit is now translated to boolean (previously smallint) and datetime/datetime2 is translated to timestamp with time zone (previously timestamp without time zone). However, you can change to the old mappings by using the --mappings-file parameter. See the [Documentation](https://arveh.github.io/ABulkCopy.Docs/command_line_parameters/).
 
 > The data files are changed. All DateTime's are noe stored as UTC, and marked as such by ending the datetime string with a Z, e.g. 2024-06-26 11:00:00Z
 

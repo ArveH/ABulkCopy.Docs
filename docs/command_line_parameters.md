@@ -43,7 +43,7 @@ Flag to quote all identifiers. Only applicable for Postgres, where there is a si
 !!! warning
 
     When a table/column name is quoted in Postgres, you must ALWAYS use quotes when referring to this name in queries and statements. Otherwise, Postgres will throw an error, saying that it can't find the object.
- 
+
 !!! note
 
     Postgres reserved words are always quoted.
@@ -85,7 +85,7 @@ Full path for the log file
 
 The path and file name of a json file containing key-value pairs for mapping schema names and collation names. E.g. mapping the "dbo" schema in SQL Server to the "public" schema in Postgres. There is a sample-mappings.json file accompanying the executable. It looks like this:
 
-``` json
+```json
 {
   "Schemas": {
     "": "public",
@@ -115,7 +115,7 @@ The path and file name of a json file containing key-value pairs for mapping sch
 }
 ```
 
-!!! warning 
+!!! warning
 
     Currently, you should only add/change mappings for Schemas and Collations, and for the bit and datetime types.
 
@@ -123,7 +123,7 @@ The ColumnTypes mapping is currently very simple, and will be changed in the fut
 
 <div class="grid cards" markdown>
 
--   **bit**
+- __bit__
 
     ---
 
@@ -131,7 +131,7 @@ The ColumnTypes mapping is currently very simple, and will be changed in the fut
     - smallint
     - int
 
--   **datetime, datetime2, datetimeoffset**
+-   __datetime, datetime2, datetimeoffset__
 
     ---
 
@@ -167,8 +167,8 @@ For copy in from a file system, use a RegEx in .NET format.
 
 | Sample string | Description |
 | --- | --- |
-| (client&#124;scope) | Match all tables containing the words **client** or **scope**  |
-| \b(clients&#124;scopes)\b | will match **clients.schema** and **scopes.schema**, but not **someclients.schema** nor **clients2.schema** |
+| (client&#124;scope) | Match all tables containing the words __client__ or __scope__  |
+| \b(clients&#124;scopes)\b | will match __clients.schema__ and __scopes.schema__, but not __someclients.schema__ nor __clients2.schema__ |
 
 ## --skip-create (In only)
 
