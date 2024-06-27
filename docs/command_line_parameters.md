@@ -20,19 +20,19 @@ Server=ah-postgres.postgres.database.azure.com;Port=5432;Database=&lt;database n
 
 ## -d, --direction (required)
 
-Legal values:
-
-- In
-- Out
+| Legal values |
+| --- |
+| In |
+| Out |
 
 Which way you are copying data. "In" to a database or "Out" from a database
 
 ## -r, --rdbms (required)
 
-Legal values:
-
-- Pg
-- Mss
+| Legal values |
+| --- |
+| Pg |
+| Mss |
 
 What Relational Database Management System (RDBMS) you are using.
 
@@ -121,13 +121,11 @@ The path and file name of a json file containing key-value pairs for mapping sch
 
 The ColumnTypes mapping is currently very simple, and will be changed in the future. For now, you should only change bit and the datetime types, and only use the values:
 
-- __bit__
-  - boolean
-  - smallint
-  - int
-- __datetime, datetime2, datetimeoffset__
-  - timestamp with time zone
-  - timestamp
+| __bit__ | __datetime, datetime2, datetimeoffset__ |
+| --- | --- |
+| boolean | timestamp with time zone |
+| smallint | timestamp |
+| int | |
 
 ## --schema-filter (Out only)
 
