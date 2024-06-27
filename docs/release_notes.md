@@ -4,6 +4,12 @@ Before I get more functionality implemented, the Major version number will not b
 
 The Minor version number will change where there is significant new functionality, otherwise it's only the Patch number that will change.
 
+## :material-tag: 0.8.0 Breaking change: Changed bool and datetime default mappings
+
+When converting from SqlServer to Postgres, bit is now translated to boolean (previously smallint) and datetime/datetime2 is translated to timestamp with time zone (previously timestamp without time zone). However, you can change to the old mappings by using the --mappings-file parameter.
+
+> The data files are changed. All DateTime's are noe stored as UTC, and marked as such by ending the datetime string with a Z, e.g. 2024-06-26 11:00:00Z
+
 ## :material-tag: 0.7.0 Added command line parameter --to-lower
 
 This parameter will convert all identifiers (table names, column names, etc.) to lowercase. NOTE: For Postgres, this parameter will have no effect unless it's used in conjunction with the --add-quotes parameter, since Postgres will "fold" the identifier names to lowercase if they are not quoted. The --to-lower parameter is only used when direction = In
