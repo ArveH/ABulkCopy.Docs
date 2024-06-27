@@ -2,6 +2,7 @@ site_name: ABulkCopy Documentation
 nav:
   - index.md
   - quick_start.md
+  - command_line_parameters.md
   - release_notes.md
   - Type Conversions:
     - SQL Server to Postgres: type_mss_pg.md
