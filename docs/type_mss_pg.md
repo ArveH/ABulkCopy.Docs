@@ -5,9 +5,9 @@ If the type is not listed in this table, it is assumed that the same type exists
 | SQL Server   | Postgres |
 | ----------- | ----------- |
 | Binary         | ByteA |
-| Bit            | SmallInt |
-| DateTime       | Timestamp |
-| DateTime2      | Timestamp |
+| Bit            | Boolean |
+| DateTime       | TimestampTz |
+| DateTime2      | TimestampTz |
 | DateTimeOffset | TimestampTz |
 | Float          | DoublePrecision |
 | NChar          | Char |
