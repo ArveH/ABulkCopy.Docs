@@ -121,24 +121,13 @@ The path and file name of a json file containing key-value pairs for mapping sch
 
 The ColumnTypes mapping is currently very simple, and will be changed in the future. For now, you should only change bit and the datetime types, and only use the values:
 
-<div class="grid cards" markdown>
-
 - __bit__
-
-    ---
-
-    - boolean
-    - smallint
-    - int
-
--   __datetime, datetime2, datetimeoffset__
-
-    ---
-
-    - timestamp with time zone
-    - timestamp
-
-</div>
+  - boolean
+  - smallint
+  - int
+- __datetime, datetime2, datetimeoffset__
+  - timestamp with time zone
+  - timestamp
 
 ## --schema-filter (Out only)
 
