@@ -4,7 +4,15 @@ Before I get more functionality implemented, the Major version number will not b
 
 The Minor version number will change where there is significant new functionality, otherwise it's only the Patch number that will change.
 
-## :material-tag: 0.8.0 Breaking change: Changed bool and datetime default mappings
+## :material-tag: 0.8.3 Updated workflow file
+
+Only the workflow file was updated, so there is no change to the program. The workflow file was using two depricated actions for creating a release, that needed to be replaced.
+
+## :material-tag: 0.8.2 Don't prompt when folder doesn't exist
+
+Just a small change. Decided to remove the prompt for when folder doesn't exist. It doesn't really make sense to prompt here. I've created a new issue for halting if files are overwritten instead ([Issue 41](https://github.com/ArveH/ABulkCopy/issues/41)).
+
+## :material-tag: 0.8.1 Breaking change: Changed bool and datetime default mappings
 
 When converting from SqlServer to Postgres, bit is now translated to boolean (previously smallint) and datetime/datetime2 is translated to timestamp with time zone (previously timestamp without time zone). However, you can change to the old mappings by using the --mappings-file parameter. See the [Documentation](https://arveh.github.io/ABulkCopy.Docs/command_line_parameters/).
 
