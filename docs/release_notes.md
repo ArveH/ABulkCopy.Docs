@@ -6,7 +6,7 @@ The Minor version number will change where there is significant new functionalit
 
 ## :material-tag: 0.8.3 Updated workflow file
 
-Only the workflow file was updated, so there is no change to the program. The workflow file was using two depricated actions for creating a release, that needed to be replaced.
+Only the workflow file was updated, so there is no change to the program. The workflow file was using two depricated actions for creating a release. These where replaced.
 
 ## :material-tag: 0.8.2 Don't prompt when folder doesn't exist
 
