@@ -4,6 +4,10 @@ Before I get more functionality implemented, the Major version number will not b
 
 The Minor version number will change where there is significant new functionality, otherwise it's only the Patch number that will change.
 
+## :material-tag: 0.8.4 Builds for Windows, Linux and Mac
+
+No functionality is changed. If you have version 0.8.2 and running on Windows, you don't have to upgrade. This release only adds builds for Linux and Mac.
+
 ## :material-tag: 0.8.3 Updated workflow file
 
 Only the workflow file was updated, so there is no change to the program. The workflow file was using two depricated actions for creating a release. These where replaced.
