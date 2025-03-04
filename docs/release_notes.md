@@ -4,6 +4,10 @@ Before I get more functionality implemented, the Major version number will not b
 
 The Minor version number will change where there is significant new functionality, otherwise it's only the Patch number that will change.
 
+## :material-tag: 0.8.5 Build Linux-x64
+
+No functionality is changed. I just added a binary for linux-x64. So now we have binaries for windows-x64, mac-arm64, linux-x64 and linux-arm64
+
 ## :material-tag: 0.8.4 Builds for Windows, Linux and Mac
 
 No functionality is changed. If you have version 0.8.2 and running on Windows, you don't have to upgrade. This release only adds builds for Linux and Mac.
