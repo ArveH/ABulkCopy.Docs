@@ -4,6 +4,10 @@ Before I get more functionality implemented, the Major version number will not b
 
 The Minor version number will change where there is significant new functionality, otherwise it's only the Patch number that will change.
 
+## :material-tag: 0.8.6 Handle \x00 in strings
+
+PostgreSQL does not allow null bytes (\x00) in text (TEXT, VARCHAR) columns because it uses C-style strings internally, which treat \x00 as a string terminator. Sql Server do allow this, so when copying data that had zero bytes inside the string, it crashed. It will now remove these zero-bytes when copying.
+
 ## :material-tag: 0.8.5 Build Linux-x64
 
 No functionality is changed. I just added a binary for linux-x64. So now we have binaries for windows-x64, mac-arm64, linux-x64 and linux-arm64
