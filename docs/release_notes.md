@@ -4,6 +4,10 @@ Before I get more functionality implemented, the Major version number will not b
 
 The Minor version number will change where there is significant new functionality, otherwise it's only the Patch number that will change.
 
+## :material-tag: 0.8.7 Added --pre-script and --post-script parameters
+
+You can create simple script files that can be run before and after data is copied. I use it to create collations before I start copying into Postgres, and to update the __EFMigrationsHistory table after the copy has finished.
+
 ## :material-tag: 0.8.6 Handle \x00 in strings
 
 PostgreSQL does not allow null bytes (\x00) in text (TEXT, VARCHAR) columns because it uses C-style strings internally, which treat \x00 as a string terminator. Sql Server do allow this, so when copying data that had zero bytes inside the string, it crashed. It will now remove these zero-bytes when copying.
