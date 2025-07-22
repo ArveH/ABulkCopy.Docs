@@ -1,0 +1,901 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../quick_start/">
+      
+      
+        <link rel="next" href="../release_notes/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>Command line parameters - ABulkCopy Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#command-line-parameters" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="ABulkCopy Documentation" class="md-header__button md-logo" aria-label="ABulkCopy Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ABulkCopy Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Command line parameters
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ABulkCopy Documentation" class="md-nav__button md-logo" aria-label="ABulkCopy Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    ABulkCopy Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quick_start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quick Start
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Command line parameters
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Command line parameters
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#-c-connection-string-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      -c, --connection-string (required)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="-c, --connection-string (required)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sql-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sql Server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postgres" class="md-nav__link">
+    <span class="md-ellipsis">
+      Postgres
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-d-direction-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      -d, --direction (required)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-r-rdbms-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      -r, --rdbms (required)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-q-add-quotes-in-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      -q, --add-quotes (In only)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-empty-string-in-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      --empty-string (In only)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-f-folder-both-directions" class="md-nav__link">
+    <span class="md-ellipsis">
+      -f, --folder (both directions)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      --help
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-l-log-file-both-direction" class="md-nav__link">
+    <span class="md-ellipsis">
+      -l, --log-file (both direction)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-m-mappings-file-in-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      -m, --mappings-file (In only)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-schema-filter-out-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      --schema-filter (Out only)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-s-search-filter-both-directions" class="md-nav__link">
+    <span class="md-ellipsis">
+      -s, --search-filter (both directions)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="-s, --search-filter (both directions)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-copying-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      When copying out
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-copying-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      When copying in
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-skip-create-in-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      --skip-create (In only)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-to-lower-in-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      --to-lower (In only)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      --version
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../release_notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Release Notes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Type Conversions
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Type Conversions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../type_mss_pg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SQL Server to Postgres
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="command-line-parameters">Command line parameters</h1>
+<p>Listing the required ones first, then the optional ones in alphabetical order.</p>
+<h2 id="-c-connection-string-required">-c, --connection-string (required)</h2>
+<p>The connection string. They can look something like this:</p>
+<h3 id="sql-server">Sql Server</h3>
+<p>Server=.;Database=ABulkCopyTestDb;Trusted_Connection=True;MultipleActiveResultSets=true;</p>
+<p>Server=&lt;server name&gt;;Initial Catalog=&lt;database name&gt;;User Id=&lt;your user id&gt;;Password=&lt;your password&gt;;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;</p>
+<h3 id="postgres">Postgres</h3>
+<p>Server=localhost;Port=5432;Database=ABulkCopyTestDb;User Id=postgres;Include Error Detail=True;</p>
+<p>Server=ah-postgres.postgres.database.azure.com;Port=5432;Database=&lt;database name&gt;;User Id=&lt;your user id&gt;;Include Error Detail=True;Password=&lt;your password&gt;;SSL Mode=Require;Trust Server Certificate=true;Command Timeout=1800;</p>
+<h2 id="-d-direction-required">-d, --direction (required)</h2>
+<table>
+<thead>
+<tr>
+<th>Legal values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>In</td>
+</tr>
+<tr>
+<td>Out</td>
+</tr>
+</tbody>
+</table>
+<p>Which way you are copying data. "In" to a database or "Out" from a database</p>
+<h2 id="-r-rdbms-required">-r, --rdbms (required)</h2>
+<table>
+<thead>
+<tr>
+<th>Legal values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pg</td>
+</tr>
+<tr>
+<td>Mss</td>
+</tr>
+</tbody>
+</table>
+<p>What Relational Database Management System (RDBMS) you are using.</p>
+<h2 id="-q-add-quotes-in-only">-q, --add-quotes (In only)</h2>
+<p>Flag to quote all identifiers. Only applicable for Postgres, where there is a significant difference in behaviour when quoting identifiers.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>When a table/column name is quoted in Postgres, you must ALWAYS use quotes when referring to this name in queries and statements. Otherwise, Postgres will throw an error, saying that it can't find the object.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Postgres reserved words are always quoted.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For SQL Server, identifiers will always be quoted (this parameter is ignored).</p>
+</div>
+<h2 id="-empty-string-in-only">--empty-string (In only)</h2>
+<p>Describe how to handle empty strings, or strings that contains whitespace only.</p>
+<p>Legal values:</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Single</td>
+<td>An empty string is converted to a single space</td>
+</tr>
+<tr>
+<td>Empty</td>
+<td>A single space is converted to an empty string</td>
+</tr>
+<tr>
+<td>ForceSingle</td>
+<td>If the string is empty or contains only whitespace, it's converted to a single space</td>
+</tr>
+<tr>
+<td>ForceEmpty</td>
+<td>If the string contains only whitespace, it's converted to an empty string</td>
+</tr>
+</tbody>
+</table>
+<h2 id="-f-folder-both-directions">-f, --folder (both directions)</h2>
+<p>The source/destination folder for schema and data files.</p>
+<h2 id="-help">--help</h2>
+<p>Display a short description of all the command line parameters.</p>
+<h2 id="-l-log-file-both-direction">-l, --log-file (both direction)</h2>
+<p>Full path for the log file</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The log files contains A LOT of details, and can be quite huge. The probram will also append to a log file, if it already exists. I reccommend deleting the log file before every run.</p>
+</div>
+<h2 id="-m-mappings-file-in-only">-m, --mappings-file (In only)</h2>
+<p>The path and file name of a json file containing key-value pairs for mapping schema names and collation names. E.g. mapping the "dbo" schema in SQL Server to the "public" schema in Postgres. There is a sample-mappings.json file accompanying the executable. It looks like this:</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;Schemas&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">&quot;&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;public&quot;</span><span class="p">,</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nt">&quot;dbo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;public&quot;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="nt">&quot;Collations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="nt">&quot;SQL_Latin1_General_CP1_CI_AI&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;en_ci_ai&quot;</span><span class="p">,</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="nt">&quot;SQL_Latin1_General_CP1_CI_AS&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;en_ci_as&quot;</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="nt">&quot;ColumnTypes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nt">&quot;binary&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bytea&quot;</span><span class="p">,</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="nt">&quot;bit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;boolean&quot;</span><span class="p">,</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="nt">&quot;datetime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;timestamp with time zone&quot;</span><span class="p">,</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="nt">&quot;datetime2&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;timestamp with time zone&quot;</span><span class="p">,</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="nt">&quot;datetimeoffset&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;timestamp with time zone&quot;</span><span class="p">,</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="nt">&quot;float&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;doubleprecision&quot;</span><span class="p">,</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">    </span><span class="nt">&quot;nchar&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;char&quot;</span><span class="p">,</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">    </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;varchar&quot;</span><span class="p">,</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="nt">&quot;ntext&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;varchar&quot;</span><span class="p">,</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">    </span><span class="nt">&quot;nvarchar&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;varchar&quot;</span><span class="p">,</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">    </span><span class="nt">&quot;smalldatetime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;timestamp with time zone&quot;</span><span class="p">,</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">    </span><span class="nt">&quot;tinyint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;smallint&quot;</span><span class="p">,</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">    </span><span class="nt">&quot;uniqueidentifier&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uuid &quot;</span><span class="p">,</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">    </span><span class="nt">&quot;image&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bytea&quot;</span><span class="p">,</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">    </span><span class="nt">&quot;varbinary&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bytea&quot;</span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="p">}</span>
+</span></code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Currently, you should only add/change mappings for Schemas and Collations, and for the bit and datetime types.</p>
+</div>
+<p>The ColumnTypes mapping is currently very simple, and will be changed in the future. For now, you should only change bit and the datetime types, and only use the values:</p>
+<table>
+<thead>
+<tr>
+<th><strong>bit</strong></th>
+<th><strong>datetime, datetime2, datetimeoffset</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>boolean</td>
+<td>timestamp with time zone</td>
+</tr>
+<tr>
+<td>smallint</td>
+<td>timestamp</td>
+</tr>
+<tr>
+<td>int</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="-schema-filter-out-only">--schema-filter (Out only)</h2>
+<p>A comma separated list of schema names.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When it's not used, all schemas will be copied, except 'guest', 'information_schema', 'sys' and 'logs'.</p>
+</div>
+<h2 id="-s-search-filter-both-directions">-s, --search-filter (both directions)</h2>
+<p>A string to filter table names or file names. Note that the syntax of the SearchFilter is different depending on the direction parameter.</p>
+<h3 id="when-copying-out">When copying out</h3>
+<p>For copy out, the SearchFilter is the rhs of a LIKE clause in SQL.</p>
+<table>
+<thead>
+<tr>
+<th>Sample string</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>a&#91;^_&#93;%</td>
+<td>Get all tables except the ones starting with underscore</td>
+</tr>
+<tr>
+<td>a&#91;sa&#93;&#91;ya&#93;&#91;sg&#93;%</td>
+<td>Get all tables that starts with 'a' followed by "sys" or "aag (but will also get "asas", "aayg", and other combinations)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="when-copying-in">When copying in</h3>
+<p>For copy in from a file system, use a RegEx in .NET format.</p>
+<table>
+<thead>
+<tr>
+<th>Sample string</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(client&#124;scope)</td>
+<td>Match all tables containing the words <strong>client</strong> or <strong>scope</strong></td>
+</tr>
+<tr>
+<td>\b(clients&#124;scopes)\b</td>
+<td>will match <strong>clients.schema</strong> and <strong>scopes.schema</strong>, but not <strong>someclients.schema</strong> nor <strong>clients2.schema</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="-skip-create-in-only">--skip-create (In only)</h2>
+<p>It assumes that the tables already exists in the database, and will skip the "create table" step. The thought is that tables are created using Entity Framework migrations, then ABulkCopy is used to insert data.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Schema files are still needed to create the dependency graph and the copy statements, and they MUST correspond to the tables already in the database.</p>
+</div>
+<h2 id="-to-lower-in-only">--to-lower (In only)</h2>
+<p>When importing tables, all identifiers (table names, column names, etc.) will be converted to lowercase.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Postgres will always fold all names to lowercase, unless they are quoted. So for Postgres, this has no effect unless you also use it with the <em>--add-quotes</em> parameter</p>
+</div>
+<h2 id="-version">--version</h2>
+<p>Show the version of the binary files</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This version is not the same as the Release version you find under Releases in GitHub.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2024 <a href="https://github.com/arveh" target="_blank" rel="noopener">Arve Hansen</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand", "navigation.path", "toc.integrate", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotate", "content.code.copy"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+    
+  </body>
+</html>
